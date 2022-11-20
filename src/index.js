@@ -2,7 +2,23 @@
 // not using semicolon, never, unless it's required
 
 // setting up
-let root = document.documentElement
+let lihkgData, parsedData
+fetch("https://raw.githubusercontent.com/aphkyle/buiyeah/main/src/lihkgdata.csv")
+  .then((resp) => 
+    {resp.text()
+  .then((data) =>
+    {lihkgData = data})})
+
+window.addEventListener('load', () => {
+  console.log("hi work please")
+  parsedData = Papa.parse(
+    lihkgData, 
+    {
+      header: true,
+      dynamicTyping: true,
+  })
+})
+const root = document.documentElement
 root.style.setProperty('--screen-y', `${window.screen.height}px`)
 
 // events
@@ -97,4 +113,8 @@ read.addEventListener("click", (e)=>{
   const utterThis = new SpeechSynthesisUtterance(textEditor.textContent);
   utterThis.lang = "zh-HK"
   synth.speak(utterThis)
+})
+
+textEditor.addEventListener("change", (e)=>{
+
 })
