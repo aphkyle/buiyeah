@@ -17,14 +17,23 @@
   </div>
   <div id="base-div" class="horzcen">
     <div id="base-app" class="vertcen">
-      <div contentEditable spellcheck=false id="textEditor"></div>
-      <div class="horzen">
-        <button id="show">彈出</button>
-        <button id="hide">收埋</button>
-        <button id="sshw">彈句</button>
-        <button id="wshw">彈字</button>
-        <button id="read">閲讀</button>
-        <button>提示</button>
+      <div id="speechless"></div>
+      <div id="config"></div>
+      <div contentEditable spellCheck=false id="textEditor"></div>
+      <div id="buttons" class="horzen">
+        <button id="show">
+                          彈出</button>
+        <button id="hide">
+                          收埋</button>
+        <button id="readmode">
+                          模式選擇</button>
+        <button id="read">
+                          朗讀</button>
+      </div>
+      <div></div><div></div>
+      <div id="suggest">
+        <p>建議書寫字</p>
+        <div id="suggestmain"></div>
       </div>
     </div>
   </div>

@@ -5,17 +5,11 @@
   margin: 0px;
   padding: 0px;
   text-align: center;
+  color: var(--nord4)
 }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-}
-
-a {
-  text-decoration: none;
-  margin-bottom: 1em;
-  color: var(--nord6);
-  transition: color 0.25s;
 }
 
 button {
@@ -23,14 +17,20 @@ button {
   margin-top: 1em;
   margin-right: 2px;
   margin-left: 2px;
+  padding: -2em;
+  color: var(--nord0);
+}
+
+#suggest p {
+  color: var(--nord4);
+  font-size: 2em;
 }
 
 #not-app {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 0.9fr auto;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  row-gap: 0;
   background-color: var(--nord0);
   height: var(--screen-y);
 }
@@ -38,6 +38,7 @@ button {
 #base-app {
   height: 100%;
   width: 60%;
+  background-color: var(--nord1);
 }
 
 #header-div {
@@ -52,25 +53,27 @@ button {
   }
 }
 
+#head-nav a {
+  text-decoration: none;
+  margin-bottom: 1em;
+  color: var(--nord6);
+  transition: all 0.25s ease-out;
+  &:first-child{
+    color: rgb(255, 157, 0);
+    font-weight: bold;
+    font-size: larger;
+  }
+  &:hover{
+    opacity: 50%;
+  }
+}
+
 #base-div {
   background-color: var(--nord1);
 }
 
 #footer-div {
   background-color: var(--nord0);
-}
-
-.horzcen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vertcen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 #textEditor {
@@ -88,18 +91,48 @@ button {
 
   text-align: start;
   text-decoration: none;
+  white-space: break-spaces;
+  word-break: break-word;
+  line-height: 1.8em;
+  overflow-y: auto;
   overflow-wrap: break-word;
   
   color: var(--nord6);
   background-color: var(--nord3);
 }
 
-.orange {
-  color: rgb(255, 157, 0);
+#speechless {
+  font-size: 2em;
+  line-height: 3em;
 }
-.bold {
-  font-weight: bold;
+
+#config {
+  text-align: end;
 }
-.large {
-  font-size: larger;
+
+.horzcen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertcen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.redacted {
+  background-color: var(--nord6);
+  color: var(--nord6);
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
