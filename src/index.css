@@ -19,7 +19,7 @@ button {
   color: var(--nord0);
 }
 
-p {
+#suggest p {
   color: var(--nord4);
   font-size: 2em;
 }
@@ -92,6 +92,15 @@ p {
   overflow-wrap: break-word;
   color: var(--nord6);
   background-color: var(--nord3);
+}
+
+#speechless {
+  font-size: 2em;
+  line-height: 3em;
+}
+
+#config {
+  text-align: end;
 }
 
 .horzcen {
