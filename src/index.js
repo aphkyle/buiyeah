@@ -118,3 +118,13 @@ read.addEventListener("click", (e)=>{
 textEditor.addEventListener("change", (e)=>{
 
 })
+
+textEditor.addEventListener("paste", (e)=>{
+    e.preventDefault()
+    let paste = (event.clipboardData || window.clipboardData).getData('text')
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+    selection.deleteFromDocument();
+    selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+    selection.collapseToEnd();
+});
