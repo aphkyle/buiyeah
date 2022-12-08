@@ -1,4 +1,20 @@
 @import "nord.css";
+@-webkit-keyframes gobright {
+  0% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes gobright {
+  0% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -7,7 +23,14 @@
 }
 
 body {
+  -webkit-animation: 1s ease-out 0s 1 gobright;
+          animation: 1s ease-out 0s 1 gobright;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  scrollbar-width: none;
+  background-color: var(--nord1);
+}
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 button {
@@ -25,12 +48,12 @@ button {
 }
 
 #not-app {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 0.9fr auto;
-  row-gap: 0;
-  background-color: var(--nord0);
-  height: var(--screen-y);
+  background-color: var(--nord1);
+  width: var(--screen-x);
+  scrollbar-width: none;
+}
+#not-app::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 #base-app {
@@ -45,6 +68,7 @@ button {
 
 #head-nav {
   width: 60vw;
+  line-height: 4em;
 }
 #head-nav * {
   margin-right: 20px;
@@ -67,18 +91,15 @@ button {
 }
 
 #base-div {
+  height: 100%;
   background-color: var(--nord1);
-}
-
-#footer-div {
-  background-color: var(--nord0);
 }
 
 #textEditor {
   display: inline-block;
-  max-height: 70%;
+  max-height: 1.2em;
   max-width: 100%;
-  min-height: 70%;
+  min-height: 1.2em;
   min-width: 100%;
   border-radius: 10px;
   border: 0px;
@@ -88,8 +109,7 @@ button {
   white-space: break-spaces;
   word-break: break-word;
   line-height: 1.8em;
-  overflow-y: auto;
-  overflow-wrap: break-word;
+  overflow: scroll;
   color: var(--nord6);
   background-color: var(--nord3);
 }
@@ -101,6 +121,14 @@ button {
 
 #config {
   text-align: end;
+}
+
+#suggest {
+  margin-top: 3em;
+}
+
+#suggest-main {
+  margin-top: 3em;
 }
 
 .horzcen {
