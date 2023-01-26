@@ -1,7 +1,6 @@
+@charset "UTF-8";
 @import "nord.css";
 /*!
- *
- *
  * Project:    buiyeah
  * Repository: https://github.com/aphkyle/buiyeah
  * License:    MIT
@@ -136,6 +135,8 @@ button {
 
 #suggest-main {
   margin-top: 3em;
+  font-family: "標楷體";
+  font-size: 3rem;
 }
 
 .horzcen {

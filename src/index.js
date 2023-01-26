@@ -168,7 +168,7 @@ gen.addEventListener("click", async ()=>{
         suggestmain.textContent += match
       } else{
         if (wordStrk >= 14 && wordFreq <= 12000){
-          suggestmain.textContent += match
+          suggestmain.textContent += match + '\t'
         }
       }
     })
