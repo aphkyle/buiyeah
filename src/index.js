@@ -85,9 +85,22 @@ synth.onvoiceschanged = ()=>{
   voice = synth.getVoices().find(voice => voice.lang.toLowerCase().includes("zh-hk"))
   if (voice){
     document.getElementById("speechless").innerHTML = "" // 遲啲會自己整 TTS
+    // 好啦只能夠話見到一兩年前嘅自己寫comment有啲高興
+    // 不過自己整tts呢啲嘢就未必會搞
+    // 我呢啲小programmer用部 0 computing power嘅小laptop 唔足以train一個自然嘅tts
     read.disabled = false
   }
 }
+
+// copied code from https://stackoverflow.com/a/57672147
+setInterval(() => {
+    console.log(synth.speaking);
+    if (!synth.speaking) {
+      clearInterval(r);
+    } else {
+        synth.resume();
+    }
+}, 14000);
 
 hideButton.addEventListener("click", (e)=>{
   textEditor.removeAttribute("contenteditable")
